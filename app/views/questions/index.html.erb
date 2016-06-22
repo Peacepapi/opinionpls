@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="row">
+		<div class="col-md-2 col-md-offset-1 category">
+			<ul>
+				<b>Category</b>
+				<% @categories.each do |category| %>
+					<li><%= link_to category.name, category_path(category) %> <span>(<%= category.questions.size %>)</span></li>
+				<% end %>
+			</ul>
+		</div>
+		<div class="col-md-8">
+			<% @questions.each do |question| %>
+				<div id="question" class="col-md-3">
+					<% if question.ques_pic.present? %>
+						<%= image_tag question.ques_pic.url(:medium_pic) %>
+					<% end %>
+					<h4><%= link_to question.title, question %></h4>
+				</div>
+			<% end %>
+		</div>
+	</div>
+	<div class="col-md-12 text-center">
+		<%= will_paginate @questions %>
+	</div>
+</div>
+

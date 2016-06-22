@@ -1,0 +1,5 @@
+<ul>
+	<% @category.questions.each do |ques| %>
+		<li><%= link_to ques.title, question_path(ques) %></li>
+	<% end %>
+</ul>
