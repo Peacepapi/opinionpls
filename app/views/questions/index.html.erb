@@ -1,6 +1,5 @@
-<div class="row">
-	<div class="row">
-		<div class="col-md-2 col-md-offset-1 category">
+
+		<div class="category">
 			<ul>
 				<b>Category</b>
 				<% @categories.each do |category| %>
@@ -8,9 +7,9 @@
 				<% end %>
 			</ul>
 		</div>
-		<div class="col-md-8">
-			<% @questions.each do |question| %>
-				<div id="question" class="col-md-3">
+		<div class="transitions-enabled" id="questions">
+			<% @questions.each do |question| %>s
+				<div id="question" class="col-md-3 box panel panel-default">
 					<% if question.ques_pic.present? %>
 						<%= image_tag question.ques_pic.url(:medium_pic) %>
 					<% end %>
@@ -18,9 +17,7 @@
 				</div>
 			<% end %>
 		</div>
-	</div>
+
 	<div class="col-md-12 text-center">
 		<%= will_paginate @questions %>
 	</div>
-</div>
-

@@ -19,9 +19,14 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 gem 'pry', '~> 0.10.3'
 gem 'will_paginate', '~> 3.1.0'
 gem 'omniauth-facebook'
-gem 'omniauth-github'
-gem 'omniauth-twitter'
+#gem 'omniauth-github'
+#gem 'omniauth-twitter'
 gem 'activerecord-session_store'
+gem 'masonry-rails'
+
+
+
+
 
 group :development, :test do
   gem 'byebug'
@@ -31,4 +36,3 @@ group :development do
   gem 'web-console', '~> 2.0'
  gem 'spring'
 end
-
