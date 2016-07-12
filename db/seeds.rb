@@ -1,10 +1,10 @@
-User.create(email: 'kevin@cambo.com', password: '1234567')
-User.create(email: 'jim@cambo.com', password: '1234567')
-User.create(email: 'pier@cambo.com', password: '1234567')
-User.create(email: 'peace@cambo.com', password: '1234567')
-User.create(email: 'ping@cambo.com', password: '1234567')
-User.create(email: 'mander@cambo.com', password: '1234567')
-User.create(email: 'chirp@cambo.com', password: '1234567')
+User.create(email: 'kevin@cambo.com', password: '1234567', name: 'keven')
+User.create(email: 'jim@cambo.com', password: '1234567', name: 'jim')
+User.create(email: 'pier@cambo.com', password: '1234567', name: 'pier')
+User.create(email: 'peace@cambo.com', password: '1234567', name: 'peace')
+User.create(email: 'ping@cambo.com', password: '1234567', name: 'ping')
+User.create(email: 'mander@cambo.com', password: '1234567', name: 'mander')
+User.create(email: 'chirp@cambo.com', password: '1234567', name: 'chirp')
 
 
 Category.create(name: 'Random')

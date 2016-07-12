@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  before_save :cap_username
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   devise :omniauthable, :omniauth_providers => [:facebook, :github, :twitter]
@@ -15,6 +17,10 @@ class User < ActiveRecord::Base
 			user.password = Devise.friendly_token[0,20]
 			user.name = auth.info.name   # assuming the user model has a name
 		end
+	end
+
+	def cap_username
+		self.name.capitalize!
 	end
 
 end

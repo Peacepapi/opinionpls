@@ -1,23 +1,28 @@
-
-		<div class="category">
-			<ul>
-				<b>Category</b>
-				<% @categories.each do |category| %>
-					<li><%= link_to category.name, category_path(category) %> <span>(<%= category.questions.size %>)</span></li>
-				<% end %>
-			</ul>
-		</div>
-		<div class="transitions-enabled" id="questions">
-			<% @questions.each do |question| %>s
-				<div id="question" class="col-md-3 box panel panel-default">
-					<% if question.ques_pic.present? %>
-						<%= image_tag question.ques_pic.url(:medium_pic) %>
+<div class="row">
+	<div class="col-md-2">
+		<ul id="category">
+			<% @categories.each do |category| %>
+				<li>
+					<%= link_to category_path(category) do %> 
+						<%=  category.name %>
+						<span>(<%= category.questions.size %>)</span>
 					<% end %>
-					<h4><%= link_to question.title, question %></h4>
-				</div>
+				</li>
 			<% end %>
-		</div>
-
-	<div class="col-md-12 text-center">
-		<%= will_paginate @questions %>
+		</ul>
 	</div>
+	<div class="col-md-10" id="questions">
+		<% @questions.each do |question| %>
+			<div id="question" class="col-md-5">
+				<% if question.ques_pic.present? %>
+					<%= image_tag question.ques_pic.url(:medium_pic) %>
+				<% end %>
+				<h4><%= link_to question.title, question %></h4>
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<div class="col-md-12 text-center">
+	<%= will_paginate @questions %>
+</div>

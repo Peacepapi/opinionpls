@@ -1,7 +1,7 @@
 class Question < ActiveRecord::Base
 	has_many :choices, dependent: :destroy
 	has_many :votes
-	belongs_to :Category
+	belongs_to :category
 	belongs_to :user
 
 	has_attached_file :ques_pic, styles: { large_pic: "600x400>", medium_pic: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"

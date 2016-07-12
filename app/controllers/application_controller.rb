@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
     def require_user
   	if !user_signed_in?
   		flash[:warning] = "Please sign in to continue."
-  		redirect_to root_path
+  		redirect_to new_user_session_path
 	end
   end
 end

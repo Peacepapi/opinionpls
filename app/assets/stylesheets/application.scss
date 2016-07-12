@@ -11,7 +11,6 @@
  * file per style scope.
  *
 
-*= require 'masonry/transitions'
  *= require_tree .
  *= require_self
 
@@ -21,8 +20,19 @@
 @import url(https://fonts.googleapis.com/css?family=Work+Sans:400,600);
 
 /**************----------------ALL----------------------**************/
+
+* {
+	color: #002b80;
+}
 body {
-	font-family: 'Work Sans'
+	font-family: 'Work Sans';
+	background: 
+	linear-gradient(
+		rgba(210,255,82,1),
+		rgba(145,232,66,.5)
+	),
+	url("question-mark-background.png");
+	background-size: 600px 750px;
 }
 
 abbr{
@@ -43,6 +53,9 @@ abbr{
 		color: red;
 	}
 }
+.row {
+	margin-right: 0;
+}
 /**************----------------NAVIGATION----------------------**************/
 
 #notification_wrapper {
@@ -53,36 +66,77 @@ abbr{
 }
 
 .navbar {
-	background-color: #000;
+	color: #002b80;
+	background-color: #fff;
 
 }
 /**************----------------BODY----------------------**************/
-
+.random-div {
+	height: 20px;
+	margin-bottom: 20px;
+	background-color: #fff;
+}
 
 		/**********-----------CATEGORY-------------**********/
-
-.category {
-
-	ul{
-		margin: auto;
-	}
-
-	li {
-		list-style: none;
-
-		span{
-			color: #999;
-		}
-	}
+a {
+	color: #002b80;
+}
+ul#category {
+    padding: 0;
 }
 
+ul#category li {
+	min-width: 170px;
+    padding: 10px 5px;
+}
+
+ul#category li a {
+    background-color: #fff;
+    color: #002b80;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+ul#category li a:hover {
+    background-color: orange;
+}
+.pagination {
+	border-radius: 0;
+	background-color: #fff;
+}
 /**************----------------QUESTIONS----------------------**************/
 
-#question {
-	background: #c0fff4;
-	margin: 10px;
-	width: 350px;
-	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.22);
-	border-radius: 7px;
-	text-align: center;
+		/***********************INDEX****************************/
+#questions {
 }
+#question {
+	overflow: hidden;
+	background: #fff;
+    margin: 0px 10px 10px 30px;
+    max-height: 250px;
+	box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.52);
+	text-align: left;
+	padding-right: 0;
+}
+#question img {
+	float: right;
+	display: inline-block;
+}
+		/***********************SHOW****************************/
+.bg-white {
+	background-color: #fff;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

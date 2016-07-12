@@ -5,7 +5,7 @@ class QuestionsController < ApplicationController
 
 	def index
 		@categories = Category.all
-		@questions = Question.order('created_at DESC').paginate(:page => params[:page], :per_page => 10)
+		@questions = Question.order('created_at DESC').paginate(:page => params[:page], :per_page => 8)
 	end
 
 	def new

@@ -1,5 +1,24 @@
-<ul>
-	<% @category.questions.each do |ques| %>
-		<li><%= link_to ques.title, question_path(ques) %></li>
-	<% end %>
-</ul>
+<div class="row">
+	<div class="col-md-2">
+		<ul id="category">
+			<% @categories.each do |category| %>
+				<li>
+					<%= link_to category_path(category) do %> 
+						<%=  category.name %>
+						<span>(<%= category.questions.size %>)</span>
+					<% end %>
+				</li>
+			<% end %>
+		</ul>
+	</div>
+	<div class="col-md-10" id="questions">		
+		<% @category.questions.each do |ques| %>
+		<div id="question" class="col-md-5">
+			<h4><%= link_to ques.title, question_path(ques) %></h4>
+		</div>
+		<% end %>
+	</div>
+</div>
+
+
+	
